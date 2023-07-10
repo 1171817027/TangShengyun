@@ -66,7 +66,7 @@ if ($page) {
         if ($username) { //说明有username参数,是管理员修改别人的资料
             $sql = "select * from info where username ='$username'";
         } else {
-            $sql = "select * from info where username='" . $_SESSION['LoggedUsername'] . "'";
+            @$sql = "select * from info where username='" . $_SESSION['LoggedUsername'] . "'";
         }
 
         $result = mysqli_query($conn, $sql);
